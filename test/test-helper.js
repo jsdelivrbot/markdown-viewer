@@ -7,7 +7,7 @@ global.document = jsdom.jsdom()
 global.window = global.document.defaultView
 
 
-function renderComponent(Component, props, state) {
+function renderComponent(Component, props = {}, state = {}) {
   let component = renderIntoDocument(<Component {...props} />)
 
   if (state) {

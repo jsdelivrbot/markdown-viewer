@@ -7,7 +7,6 @@ module.exports = {
   },
   entry: {
     main: [
-      'webpack/hot/dev-server',
       path.resolve(__dirname, 'src'),
       path.resolve(__dirname, 'styles')
     ]
@@ -17,10 +16,6 @@ module.exports = {
     filename: 'js/[name].js',
     publicPath: '/'
   },
-  devServer: {
-    constentBase: 'dist'
-  },
-  devtool: 'inline-source-map',
   module: {
     loaders: [
       {
@@ -41,7 +36,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
   ]
 }

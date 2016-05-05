@@ -9,6 +9,7 @@
     "eslint:recommended",
     "plugin:react/recommended"
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -24,6 +25,7 @@
       "error",
       2
     ],
+    "react/no-danger": "off",
     "linebreak-style": [
       "error",
       "unix"
@@ -36,6 +38,7 @@
     "semi": [
       "error",
       "never"
-    ]
+    ],
+    "no-trailing-spaces": "error"
   }
 }
